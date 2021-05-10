@@ -1,0 +1,12 @@
+{
+  "name": "TakeCare",
+  "displayName": "TakeCare",
+  "expo": {
+    "name": "TakeCare",
+    "slug": "TakeCare",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
