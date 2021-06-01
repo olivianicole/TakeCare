@@ -1,43 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Switch, TextInput, Button } from 'react-native';
+import List from './List';
 
 export default function App() {
-  const [taskList, changeTaskList] = React.useState([]);
+  const taskList = [];
   const [taskStatus, changeTaskStatus] = React.useState(false);
 
-  // const Task = () => {
-
-  //   return (
-  //     <View style={styles.taskContainer}>
-  //       <Switch 
-  //       value={taskStatus}/>
-  //       <TextInput
-  //       style={styles.newTask}
-  //       value={task}
-  //       placeholder="Add a new task..."/>
-  //     </View>
-  //   )
-  // }
- 
-  // const addNewTask = () => {
-  //   taskList.push(task)
-  // }
+  const task = (
+    <View style={styles.taskContainer}>
+        <Switch 
+        value={taskStatus}
+        />
+        <TextInput
+        style={styles.newTask}
+        placeholder="Add a new task..."/>
+      </View>
+  )
+  const addNewTask = () => {
+    taskList.push(task)
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.titleText}>Take Care</Text>
       <Text style={styles.subtitleText}>Take care of yourself by first taking care of your tasks.</Text>
       <StatusBar style="auto" />
- 
-
-      {/* add new empty task */}
+      <List taskList={taskList} taskStatus={taskStatus}/>
       <Button 
       style={styles.addNew}
       title="+"
       onPress={addNewTask}/>
-      {/* {taskList.map((task) => {
-          return task;
-      })} */}
+
     </View>
   );
 }
