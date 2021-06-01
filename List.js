@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Switch, TextInput, Button } from 'react-native';
+import { StyleSheet, View, Switch, TextInput } from 'react-native';
 
 export default function List ({taskList, taskStatus}) {
     if (taskList.length > 0) {
